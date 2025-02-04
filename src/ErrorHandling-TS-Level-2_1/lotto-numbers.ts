@@ -1,11 +1,11 @@
 // Schreibe eine Funktion generateLottoNumber, die eine Lottozahl generiert.
 
-const lottoNumbers: number[] = [];
+const lottoResults: number[] = [];
 
 function generateLottoNumber() {
 	const randomNumber: number = Math.floor(Math.random() * 100) + 1;
 	if (randomNumber <= 49) {
-		lottoNumbers.push(randomNumber);
+		lottoResults.push(randomNumber);
 		return randomNumber;
 	} else {
 		// Wenn die random erstellte Zahl größer als 49 ist, soll ein Fehler ausgelöst werden.
@@ -19,10 +19,10 @@ generateLottoNumber();
 //Verwende einen try-catch-Block, um Fehler abzufangen und zu behandeln.
 //Schreib die generierte Lottozahl in ein Array lottoResults: number[], wenn kein Fehler aufgetreten ist.
 
-while (lottoNumbers.length < 7) {
+while (lottoResults.length < 7) {
 	try {
 		generateLottoNumber();
-		console.log(lottoNumbers);
+		console.log(lottoResults);
 	} catch (err) {
 		console.log(err);
 	}
