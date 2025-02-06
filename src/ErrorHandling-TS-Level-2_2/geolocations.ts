@@ -1,6 +1,6 @@
 //Schreibe eine Funktion getCurrentPosition, die die Geolocation-API verwendet, um die aktuellen Koordinaten des Benutzers abzurufen.
 
-const outputSection = document.querySelector<HTMLDivElement>("#output");
+// const outputSection = document.querySelector<HTMLDivElement>("#output");
 
 function getCurrentLocation() {
 	try {
@@ -15,8 +15,11 @@ function getCurrentLocation() {
 		console.log("getCurrentPosition finished");
 	}
 }
+type GeoData = {
+	coords: { latitude: number; longitude: number };
+};
 
-function showPosition(position) {
+function showPosition(position: GeoData) {
 	window.confirm(
 		`Latitude: ${position.coords.latitude} und die Londitude: ${position.coords.longitude}`
 	);
